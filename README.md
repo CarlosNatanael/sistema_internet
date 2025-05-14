@@ -28,10 +28,12 @@ Aplicativo desktop simples e moderno para **monitorar a velocidade da internet e
 3. Clique em **"Iniciar Monitoramento"** para começar a medir a velocidade.
 
 ## Estrutura do Projeto
+ ```bash
 sistema_internet/
 ├── icone.ico # Ícone do app (opcional)
 ├── internet_speed_monitor.py # Código principal
 └── README.md # Documentação
+ ```
 
 ## Tecnologias Utilizadas
 - Python 3.x
