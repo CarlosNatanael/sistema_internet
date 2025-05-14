@@ -61,5 +61,4 @@ sistema_internet/
 Este projeto está licenciado sob a **MIT License**.
 
 ---
-
-> Desenvolvido por **Carlos Natanael** — com muito café ☕ e paciência com a internet 🐢
+> Desenvolvido por **Carlos Natanael** — com muito café e paciência com a internet 
