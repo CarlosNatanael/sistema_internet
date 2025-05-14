@@ -1,16 +1,30 @@
 import tkinter as tk
 from tkinter import ttk
-import speedtest
+import speedtest_cli as speedtest
 import threading
 from time import sleep
 
+
+try:
+    # Tente primeiro a importação moderna
+    import speedtest
+except ImportError:
+    # Fallback para versões mais antigas
+    import speedtest_cli as speedtest
+
 class InternetSpeedMonitor:
     def __init__(self, root):
-        self.root = root
-        self.st = speedtest.Speedtest()
-        self.root.title("Monitor de Velocidade da Internet")
-        self.root.geometry("400x450")
-        self.root.iconbitmap('icone.ico')
+        try:
+            self.root = root
+            self.st = speedtest.Speedtest()
+            self.root.title("Monitor de Velocidade da Internet")
+            self.root.geometry("400x450")
+            self.root.iconbitmap('icone.ico')
+        except AttributeError as e:
+            # Tratamento adicional de erro
+            print(f"Erro ao inicializar speedtest: {e}")
+            # Tente uma abordagem alternativa
+            self.st = speedtest.Speedtest(secure=True)
         
         # Configurar tema escuro
         self.style = ttk.Style()
