@@ -11,7 +11,8 @@ Aplicativo desktop simples e moderno para **monitorar a velocidade da internet e
 - Desenvolvido em **Python + Tkinter**
 
 ## Captura de Tela
-![screenshot exemplo](exemplo.png) <!-- coloque uma imagem do app aqui -->
+<!-- coloque uma imagem do app aqui -->
+![image](https://github.com/user-attachments/assets/3f2d44d6-fdfa-4d52-9cea-3af696bebca9)
 
 ## Como usar
 1. Instale as dependências:
