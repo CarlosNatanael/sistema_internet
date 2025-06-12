@@ -1,16 +1,27 @@
+import sys
+import os
+
+if getattr(sys, 'frozen', False):
+    sys.stdout = open(os.devnull, 'w')
+    sys.stderr = open(os.devnull, 'w')
+
+
 import tkinter as tk
 from tkinter import ttk
 import speedtest_cli as speedtest
 import threading
 from time import sleep
+import os
+import sys
 
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
-try:
-    # Tente primeiro a importação moderna
-    import speedtest
-except ImportError:
-    # Fallback para versões mais antigas
-    import speedtest_cli as speedtest
+ico_path = resource_path('icone.ico')
 
 class InternetSpeedMonitor:
     def __init__(self, root):
@@ -19,7 +30,7 @@ class InternetSpeedMonitor:
             self.st = speedtest.Speedtest()
             self.root.title("Monitor de Velocidade da Internet")
             self.root.geometry("400x450")
-            self.root.iconbitmap('icone.ico')
+            self.root.iconbitmap(ico_path)
         except AttributeError as e:
             # Tratamento adicional de erro
             print(f"Erro ao inicializar speedtest: {e}")
